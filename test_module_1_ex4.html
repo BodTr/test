@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test</title>
+  </head>
+  <body>
+    <script>
+        class Phone {
+            constructor(phoneCode, name, nsx, price) {
+                this._phoneCode = phoneCode
+                this._name = name
+                this._nsx = nsx
+                this._price = price
+            }
+
+            get getPhoneCode() {
+                return this._phoneCode
+            }
+            set setPhoneCode(phoneCode) {
+                this._phoneCode = phoneCode
+            }
+            get getName() {
+                return this._name
+            }
+            set setName(name) {
+                this._name = name
+            }
+            get getNSX() {
+                return this._nsx
+            }
+            set setNSX(nsx) {
+                this._nsx = nsx
+            }
+            get getPrice() {
+                return this._price
+            }
+            set setPrice(price) {
+                this._price = price
+            }
+
+            toString() {
+                return `Mã điện thoại: ${this._phoneCode} - Tên: ${this._name} - Hãng sản xuất: ${this._nsx} - Giá: ${this._price}`
+            }
+
+        }
+        let phone1 = new Phone('NOKIA12345', 'Nokia - S23', 'SAMSUNG', '$123123')
+        console.log(phone1, "phone1")
+        console.log(phone1.toString(), 'Thông tin điện thoại 1')
+    </script>
+  </body>
+</html>

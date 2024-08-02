@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test</title>
+  </head>
+  <body>
+    <input type="number" id="inputNum" />
+    <button type="button" id="addButton" onclick="addElFunction()">
+      Thêm vào mảng
+    </button>
+    <p id="result"></p>
+    <script>
+      let numArr = [];
+      function addElFunction() {
+        let inputValue = document.getElementById("inputNum").value;
+        if (inputValue === "") {
+          alert("Hãy điền vào input 1 số");
+        } else {
+          document.getElementById("inputNum").value = "";
+          if (numArr.length <= 20) {
+            numArr.push(inputValue);
+            console.log(numArr, "numArr");
+            let evenSum = 0;
+            let oddSum = 0;
+            let evenString = "";
+            let oddString = "";
+            for (let i = 0; i < numArr.length; i++) {
+              if (numArr[i] % 2 === 0) {
+                evenSum += Number(numArr[i]);
+                evenString += ` ${numArr[i]} +`;
+              } else {
+                oddSum += Number(numArr[i]);
+                oddString += ` ${numArr[i]} +`;
+              }
+            }
+            const sub = evenSum - oddSum;
+            console.log(sub, "sub");
+            oddString = oddString.slice(0, -1)
+            evenString = evenString.slice(0, -1)
+            console.log(oddString, "oddString");
+            console.log(evenString, "evenString");
+
+            const result = `Kết quả sau khi thực hiện là: (${evenString}) - (${oddString}) = ${sub}`;
+            document.getElementById("result").textContent = result
+          } else {
+            document.getElementById("result").textContent =
+              "Mảng đã đạt tối đa độ dài";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

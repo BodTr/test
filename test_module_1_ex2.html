@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test</title>
+  </head>
+  <body>
+    <script>
+        function countUpperCase(str) {
+            const strArr = str.split("")
+            let uppCount = 0
+            let specialCaseNNum = ['!', '@', '#','$', '%', '^', '&', '*', '(', ')', '+', '=', '.', '_', '-', '~', '[', ']', '{', '}', '|', ';', ':', ',', '<', '>', '?', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+            let filteredStrArr = strArr.filter(e => {
+                if (!specialCaseNNum.includes(e)) {
+                    return e
+                }
+            })
+            console.log(filteredStrArr, "filteredStrArr")
+            for (let i = 0; i < filteredStrArr.length; i++) {
+                if (filteredStrArr[i] === filteredStrArr[i].toUpperCase()) {
+                    uppCount += 1
+                }
+            }
+            return uppCount
+        }
+        
+        console.log(countUpperCase('REW$%$2131SasfwDDD12'), 'countUpperCase', 'REW$%$2131SasfwDDD12')
+    </script>
+  </body>
+
+</html>
